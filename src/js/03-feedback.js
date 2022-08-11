@@ -23,9 +23,13 @@ function onFormInput(event) {
 
 function onFormSubmit(event) {
     event.preventDefault();
+  
+    
     obj = obj2;
-  if (refs.inputEmail.value.trim() !== '' && refs.message.value.trim() !== '') {
-      console.log(obj);
+    if (refs.inputEmail.value.trim() !== '' && refs.message.value.trim() !== '') {
+        if (obj.email !== '' || obj.message !== '') {
+            console.log(obj);
+        }
       
     localStorage.removeItem(FEEDBACK_FORM_STATE);
     event.target.reset();
